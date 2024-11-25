@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<title>practice login</title>
+		  <meta name="viewport" content="width=device-width, initial-scale=1">
+  		  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+		<style>
+			.paddingbottom1{
+				padding-bottom: 15px;
+			}
+			.paddingbottom2{
+				padding-bottom: 25px;
+			}
+			h3{
+				color:#ffffff;
+				text-align:center;
+				padding:50px;
+			}
+			.radio-group{
+				padding:5px 10px;
+			}
+			.login{
+				text-align:center;.
+				color:#ffffff;
+				padding:50px 0px;
+			}
+		</style>
+		<script>
+			function dispid(){
+				document.getElementById("uid").innerHTML = "Enter Your UserId"
+				document.getElementById("uid").style.color = "red";
+			}
+			function disppwd(){
+				document.getElementById("pwd").innerHTML = "Enter Your Password";
+				document.getElementById("pwd").style.color = "red";
+			}
+			function verifypwd(){
+				var pwd=document.getElementById("password").value;
+			}
+		</script>
+	</body>
+	<head>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-10"style="background-color:#000000">
+					<h3>-Login Page</h3>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-4 bg-primary">
+					<div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<form class="form-group" name="registration" method="post" action="login.html" onsubmit="show()">
+					<div class="row paddingbottom1">
+						<div class="col-md-12">
+							<label>User Id:</label>
+							<input class="form-control" type="text" name="User Id" id="user-id" placeholder="Enter User Id" onfocus="dispid()">
+							<p id="uid"> </p>
+						</div>
+					</div>
+					<div class="row paddingbottom1">
+						<div class="col-md-12">
+							<label>Password:</label>
+							<input class="form-control" type="password" name="password" id="password" placeholder="Enter Password" onfocus="disppwd()" onblur="verifypwd()">
+							<p id="pwd"> </p>
+						</div>
+					</div>
+					<div class="row paddingbottom2">
+						<div class="col-md-6">
+							<button type="submit" class="btn btn-danger">Submit</button>
+						</div>
+						<div class="col-md-6">
+							
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 bg-primary">
+					
+				</div>
+			</div>
+		</div>
+	
+	</head>
+</html>
