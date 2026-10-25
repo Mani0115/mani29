@@ -1,0 +1,185 @@
+const stats = [
+  { value: '5+', label: 'Years building web experiences' },
+  { value: '50+', label: 'Projects launched and optimized' },
+  { value: '100%', label: 'Responsive and mobile-first focus' },
+]
+
+const services = [
+  {
+    title: 'WordPress Websites',
+    text: 'Beautiful, conversion-focused websites designed for businesses ready to grow their online presence.',
+  },
+  {
+    title: 'Landing Pages',
+    text: 'Fast, visually engaging landing pages tailored for campaigns, launches, and lead generation.',
+  },
+  {
+    title: 'Website Maintenance',
+    text: 'Updates, performance improvements, bug fixes, and ongoing support for a reliable digital presence.',
+  },
+]
+
+const process = [
+  'Discovery and strategy',
+  'Design and UX planning',
+  'Development and optimization',
+  'Launch and support',
+]
+
+const projects = [
+  { label: 'Business Site', value: 'Brand-focused website design' },
+  { label: 'Sales Funnel', value: 'Lead generation landing page' },
+  { label: 'Portfolio', value: 'Personal brand showcase' },
+  { label: 'Support Site', value: 'Content and service pages' },
+]
+
+export default function App() {
+  return (
+    <div className="page-shell">
+      <header className="topbar">
+        <div className="brand-wrap">
+          <div className="brand-mark">DM</div>
+          <div>
+            <p className="brand-name">Durga Mani Kumar Devudu</p>
+            <span className="brand-role">WordPress Website Creator</span>
+          </div>
+        </div>
+        <nav className="nav" aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#work">Work</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section className="hero">
+          <div className="hero-copy">
+            <p className="eyebrow">High-converting digital experiences</p>
+            <h1>WordPress websites that look premium and perform for business growth.</h1>
+            <p className="hero-text">
+              I design and build clean, responsive websites that help brands stand out, attract leads,
+              and turn visitors into customers.
+            </p>
+            <div className="cta-row">
+              <a className="primary-btn" href="#contact">
+                Book a Project
+              </a>
+              <a className="secondary-btn" href="#services">
+                Explore Services
+              </a>
+            </div>
+            <div className="stats-grid" aria-label="Business statistics">
+              {stats.map((item) => (
+                <div key={item.label} className="stat-card">
+                  <strong>{item.value}</strong>
+                  <span>{item.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="hero-visual" aria-label="Website preview panel">
+            <div className="device-frame">
+              <video
+                className="hero-video"
+                autoPlay
+                muted
+                loop
+                playsInline
+                onError={(event) => {
+                  event.currentTarget.style.display = 'none'
+                }}
+              >
+                <source src="./video/dragon_video.mp4" type="video/mp4" />
+              </video>
+              <div className="device-overlay">
+                <div className="device-header">
+                  <span className="dot red" />
+                  <span className="dot yellow" />
+                  <span className="dot green" />
+                </div>
+                <div className="screen-content">
+                  <span className="mini-label">WordPress Growth</span>
+                  <h3>Clean brand presence</h3>
+                  <ul>
+                    <li>UX-first design</li>
+                    <li>Responsive layout</li>
+                    <li>Conversion driven</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" className="content-section intro-wrap">
+          <div>
+            <p className="section-tag">About</p>
+            <h2>Building websites that feel polished, modern, and trustworthy.</h2>
+          </div>
+          <p>
+            I help businesses and professionals create websites that communicate value clearly, work
+            perfectly on all devices, and support their growth online.
+          </p>
+        </section>
+
+        <section id="services" className="content-section">
+          <div className="section-heading">
+            <p className="section-tag">Services</p>
+            <h2>Everything you need for a stronger online presence</h2>
+          </div>
+          <div className="card-grid">
+            {services.map((service) => (
+              <article key={service.title} className="info-card">
+                <div className="card-icon">✦</div>
+                <h3>{service.title}</h3>
+                <p>{service.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="work" className="content-section alt-panel">
+          <div className="section-heading">
+            <p className="section-tag">Process</p>
+            <h2>Simple workflow from idea to launch</h2>
+          </div>
+          <div className="process-list">
+            {process.map((step, index) => (
+              <div key={step} className="process-step">
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <p>{step}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="content-section">
+          <div className="section-heading">
+            <p className="section-tag">Selected work</p>
+            <h2>Creative layouts designed for real business impact</h2>
+          </div>
+          <div className="project-grid">
+            {projects.map((project) => (
+              <div key={project.label} className="project-card">
+                <p>{project.label}</p>
+                <strong>{project.value}</strong>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <footer id="contact" className="footer">
+        <div>
+          <p className="section-tag">Contact</p>
+          <h2>Let’s build your next website.</h2>
+        </div>
+        <a href="mailto:yourname@example.com" className="primary-btn">
+          Start a Conversation
+        </a>
+      </footer>
+    </div>
+  )
+}
